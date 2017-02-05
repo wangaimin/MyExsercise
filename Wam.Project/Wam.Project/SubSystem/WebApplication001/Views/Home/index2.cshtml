@@ -1,0 +1,27 @@
+﻿
+@model IEnumerable<Entity.User>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>index2</title>
+</head>
+<body>
+
+    <ul>
+        @foreach (var item in Model)
+        {
+          <li>@item.UserName</li>
+        }
+    </ul>
+    <div> 
+
+        成功了
+    </div>
+</body>
+</html>

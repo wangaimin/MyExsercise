@@ -1,0 +1,78 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IndexAjax</title>
+</head>
+<body>
+    <div> 
+       <span id="msg">我还未赋值</span>
+    </div>
+    <div><button name="sendAjax" onclick="sendAjax()" value="sendAjax">sendAjax</button>
+        <button name="sendErrorAjax" onclick="sendErrorAjax()" value="sendErrorAjax">sendErrorAjax</button>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/Tools/jquery-extension.js"></script>
+<script>
+  
+    var sendAjax = function () {
+
+        $.post(
+           '@Url.Action("GetData","Home")',
+           "",
+           function (res) {
+               if (res.Success) {
+                   $("#msg").text("已赋值");
+               } else {
+                   $("#msg").text("失败");
+               }
+           }, "json")//.complete(function (res) {
+           //    debugger;
+           //}).error(function (res) {
+           //    debugger;
+           //}).success(function (res) {
+           //    debugger;
+           //}).done(function (res) {//(for success), 
+           //    debugger;
+           //}).always(function (res) {//(for completion, whether success or error; added in jQuery 1.6)
+           //    debugger;
+           //}).fail(function (res) {// (for error)
+           //    debugger;
+           //})
+    }
+
+    var sendErrorAjax = function () {
+
+        $.post(
+           '@Url.Action("GetErrorData","Home")',
+           "",
+           function (res) {
+               if (res.Success) {
+                   $("#msg").text("已赋值");
+               } else {//在这里可以错里失败的返回结果，在全局ajaxSetup中也有处理
+                   $("#msg").text("失败");
+               }
+           }, "json")//.complete(function (res) {
+           //    debugger;
+           //}).error(function (res) {
+           //    debugger;
+           //}).success(function (res) {
+           //    debugger;
+           //}).done(function (res) {
+           //    debugger;
+           //}).always(function (res) {//(for completion, whether success or error; added in jQuery 1.6)
+           //    debugger;
+           //}).fail(function (res) {// (for error)
+           //    debugger;
+           //})
+    }
+
+</script>
