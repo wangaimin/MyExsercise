@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index2</title>
+    <title>非构造函数的继承</title>
 </head>
 <body>
     <div> 
@@ -17,7 +17,67 @@
 </html>
 <script>
 
+    //推荐使用第三种方式
+
+    var Chinese = {
+        nation: '中国',
+        province: ['四川', '广东'],
+        myObject: {a:1,b:2}
+    };
 
 
+    //方法一  object()
 
+    //function object(parent) {
+    //    function f() { };
+    //    f.prototype = parent;
+    //    return  new f();
+    //}
+
+    //var Doctor = object( Chinese);
+    //Doctor.career = "医生";
+    //console.log(Doctor.nation);
+    //debugger;
+
+
+    //方法二：浅拷贝  缺点：只适合用于基础类型，不适合拷贝数组、对象一类的；父对象的属性等于数组或另一个对象，那么实际上，子对象获得的只是一个内存地址，而不是真正拷贝，因此存在父对象被篡改的可能。
+    //子对象的数组改变，父对象中数组也会改变，以为指向的是内存地址
+
+    //var extendCopy = function (parent) {
+    //    var c = {};
+    //    for (var i in parent) {
+    //        c[i] = parent[i];
+    //    }
+    //    c.uber = parent;
+    //    return c;
+    //}
+
+    //var Doctor = extendCopy(Chinese);
+    //console.log(Doctor.nation);
+    //debugger;
+
+
+    //方法三：深拷贝  (jQuery库使用的就是这种继承方法。)
+    //所谓"深拷贝"，就是能够实现真正意义上的数组和对象的拷贝。它的实现并不难，只要递归调用"浅拷贝"就行了。
+
+    var extendCopy = function (parent, child) {
+
+        var child = child || {};
+        for (var i in parent) {
+
+            if (typeof parent[i] === 'object') {
+                child[i] = parent[i].constructor === Array ? [] : {};
+                extendCopy(parent[i], child[i]);
+            } else {
+                child[i] = parent[i];
+            }
+        }
+        child.uber = parent;
+        return child;
+    }
+
+
+    var Doctor = extendCopy(Chinese);
+    console.log(Doctor.nation);
+    debugger;
 </script>
