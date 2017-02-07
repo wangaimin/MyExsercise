@@ -170,6 +170,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -241,6 +242,8 @@
     <Content Include="Views\Home\Error404.cshtml" />
     <Content Include="Views\Home\Error500.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Js\Index.cshtml" />
+    <Content Include="Views\Js\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
