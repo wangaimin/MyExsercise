@@ -43,6 +43,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="EntityBasic\AjaxResult.cs" />
     <Compile Include="EntityBasic\BusinessException.cs" />
+    <Compile Include="EntityBasic\EntityBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

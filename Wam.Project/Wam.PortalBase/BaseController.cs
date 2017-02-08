@@ -7,10 +7,13 @@ using System.Web.Mvc;
 using Wam.Utility.EntityBasic;
 using Wam.Utility.Web.Auth;
 using Wam.Utility.Web.Models;
+using Wam.Utility.Web.MVC;
 
 namespace Wam.PortalBase
 {
-    [UserAuthorize]
+    [UserAuthorize]//处理权限
+       
+    [SetBaseEntityActionFilter]// 更新、新增、删除、更新时设置基础信息
     public class BaseController:Controller
     {
         UserModel userModel = null;
@@ -18,7 +21,7 @@ namespace Wam.PortalBase
 
 
 
-            //从session中取登陆信息
+            //从Cookie中取登陆信息
             //已经登陆
             userModel = new UserModel() { ID=1,Age=18, UserName="Gene" };
 
