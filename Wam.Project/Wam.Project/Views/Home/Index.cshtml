@@ -1,11 +1,19 @@
 ﻿
 @{
     ViewBag.Title = "Home Page";
+
+
 }
 @BulidJsRef("~/Scripts/jquery-1.10.2.js")@*自定义的方法，更灵活*@
 @Styles.Render("~/Content/css")
 @Scripts.Render("~/bundles/modernizr")
 
+@{
+
+    var name=System.Configuration.ConfigurationManager.AppSettings["Name"];
+
+    ViewBag.Name = name;
+  }
 
 
 
