@@ -69,7 +69,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth\UserAuthorizeAttribute.cs" />
     <Compile Include="Error\CustomHandleErrorAttribute.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="MVC\Themes\AbandonConstraint.cs" />
     <Compile Include="MVC\Themes\MyViewEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

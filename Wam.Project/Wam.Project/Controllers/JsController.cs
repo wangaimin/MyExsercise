@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Wam.PortalBase;
 
 namespace Wam.Project.Controllers
 {
-    public class JsController : Controller
+    public class JsController : BaseController
     {
         // GET: Js
         /// <summary>

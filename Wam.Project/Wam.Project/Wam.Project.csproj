@@ -244,6 +244,7 @@
     <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\Js\Index.cshtml" />
     <Content Include="Views\Js\Index2.cshtml" />
+    <Content Include="Views\Home\NoRight.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -257,6 +258,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Wam.PortalBase\Wam.PortalBase.csproj">
+      <Project>{41992858-a2d7-4b86-ad0d-5bc9b00b0141}</Project>
+      <Name>Wam.PortalBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wam.Utility.Web\Wam.Utility.Web.csproj">
       <Project>{6c91c0b5-631e-43f3-890f-638f5b1fc789}</Project>
       <Name>Wam.Utility.Web</Name>

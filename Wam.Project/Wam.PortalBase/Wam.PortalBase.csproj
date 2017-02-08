@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D1A1CE32-7B7D-4249-ADC4-2329D935811A}</ProjectGuid>
+    <ProjectGuid>{41992858-A2D7-4B86-AD0D-5BC9B00B0141}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wam.Utility</RootNamespace>
-    <AssemblyName>Wam.Utility</AssemblyName>
+    <RootNamespace>Wam.PortalBase</RootNamespace>
+    <AssemblyName>Wam.PortalBase</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\..\..\..\..\..\Gene\项目\MyMVC5WebApplication\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,10 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="EntityBasic\AjaxResult.cs" />
-    <Compile Include="EntityBasic\BusinessException.cs" />
+    <Compile Include="BaseController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wam.Utility.Web\Wam.Utility.Web.csproj">
+      <Project>{6c91c0b5-631e-43f3-890f-638f5b1fc789}</Project>
+      <Name>Wam.Utility.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wam.Utility\Wam.Utility.csproj">
+      <Project>{d1a1ce32-7b7d-4249-adc4-2329d935811a}</Project>
+      <Name>Wam.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

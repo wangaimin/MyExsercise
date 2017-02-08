@@ -40,5 +40,11 @@ namespace Wam.Project.Controllers
             ViewBag.ErrorMsg = errorMsg;
             return View();
         }
+
+        public ActionResult NoRight(string errorMsg) {
+            ViewBag.ErrorMsg = errorMsg;
+
+            return View();
+}
     }
 }

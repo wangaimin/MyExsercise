@@ -21,7 +21,7 @@ namespace Wam.Utility.Web.Error
             filterContext.Result = BuildResult(filterContext);
             filterContext.ExceptionHandled = true;
 
-           // base.OnException(filterContext);
+            base.OnException(filterContext);
         }
 
 

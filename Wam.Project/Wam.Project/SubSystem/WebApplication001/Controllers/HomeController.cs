@@ -25,8 +25,8 @@ namespace WebApplication001.Controllers
         public ActionResult index3()
         {
             var data = UserService.GetUserList();
-            int.Parse(data.First().UserName);
-
+            //   int.Parse(data.First().UserName);
+            throw new BusinessException("yun");
             return View(data);
         }
 
