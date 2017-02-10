@@ -43,12 +43,12 @@ namespace Wam.Utility.Web.Error
             //action中return view(model)中的model就是ViewData中的Model
 
 
-            string errorStr =filterContext.Exception.Message;
+            string errorStr = filterContext.Exception.Message;
             Exception exception = new Exception(errorStr);
 
             string controller = filterContext.RouteData.Values["controller"].ToString();
             string action = filterContext.RouteData.Values["action"].ToString();
-          
+
 
             ViewDataDictionary vdd = new ViewDataDictionary();
             vdd.Add("errorMsg", errorStr);
@@ -57,10 +57,11 @@ namespace Wam.Utility.Web.Error
             ViewResult vr = new ViewResult()
             {
                 ViewName = this.View,
-                MasterName=this.Master,
-                ViewData=vdd
+                MasterName = this.Master,
+                ViewData = vdd
             };
             return vr;
+
 
 
             //exception.HelpLink = IsBizException(ex) ? "BizEx" : "";

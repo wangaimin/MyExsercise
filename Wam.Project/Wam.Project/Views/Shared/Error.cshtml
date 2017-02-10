@@ -4,6 +4,14 @@
     ViewBag.Title = "Error";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h1 class="text-danger">对不起系统错误...</h1>
 
+@if (Request.Url.Host.ToLower().Contains("localhost"))
+{
+    <h3 class="text-danger">@Model.Exception.Message</h3>
+
+    <p class="text-danger">@Model.Exception.StackTrace</p>
+}
+else {
+   <h3>生成环境不会给你展示错误详情的</h3>
+}

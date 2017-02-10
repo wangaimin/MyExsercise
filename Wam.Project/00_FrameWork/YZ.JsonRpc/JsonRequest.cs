@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Newtonsoft.Json;
+
+namespace YZ.JsonRpc
+{
+    /// <summary>
+    /// Represents a JsonRpc request
+    /// </summary>
+    [JsonObject(MemberSerialization.OptIn)]
+    public class JsonRequest
+    {
+        public JsonRequest()
+        {
+        }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jsonrpc")]
+        public string JsonRpc { get { return "2.0"; } }
+
+        [JsonProperty("method")]
+        public string Method { get; set; }
+
+        [JsonProperty("params")]
+        public object Params { get; set; }
+
+        [JsonProperty("id")]
+        public object Id { get; set; }
+    }
+}
