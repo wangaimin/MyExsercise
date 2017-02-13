@@ -45,6 +45,7 @@ namespace YZ.JsonRpc.AspNet
             context.Response.ContentType = "application/json";
 
             var async = new JsonRpcStateAsync(cb, context);
+
             async.JsonRpc = GetJsonRpcString(context.Request);
             JsonRpcProcessor.Process(async,context.Request);
             return async;
