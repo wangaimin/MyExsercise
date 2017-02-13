@@ -54,10 +54,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Wam.Service\Wam.Service\Wam.Service.csproj">
+      <Project>{792678dd-123a-4b05-ba33-5325225b6ff8}</Project>
+      <Name>Wam.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wam.Utility.DataAccess\Wam.Utility.DataAccess.csproj">
+      <Project>{5f6d101c-c620-4dab-a15a-b8d6630b73f0}</Project>
+      <Name>Wam.Utility.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wam.Utility\Wam.Utility.csproj">
       <Project>{d1a1ce32-7b7d-4249-adc4-2329d935811a}</Project>
       <Name>Wam.Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configuration\Data\Shop.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

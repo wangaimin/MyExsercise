@@ -19,5 +19,14 @@ namespace Wam.Service
             }
         }
 
+        private static IEnumerable<User> GetUserList2()
+        {
+
+            using (IDbConnection conn = DBHelper.GetConn())
+            {
+                return conn.Query<User>("select * from user");
+            }
+        }
+
     }
 }
