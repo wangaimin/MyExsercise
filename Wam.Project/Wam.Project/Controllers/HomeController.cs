@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using YZ.JsonRpc.Client;
 
 namespace Wam.Project.Controllers
 {
@@ -10,6 +11,10 @@ namespace Wam.Project.Controllers
     {
         public ActionResult Index()
         {
+
+
+            string result = Rpc.Call<string>("WamService.UserService.getName", "Gene");
+
             return View();
         }
 

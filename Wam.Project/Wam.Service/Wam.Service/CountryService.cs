@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Dapper;
 namespace Wam.Service
 {
-  public static  class CountryService
+  public   class CountryService
     {
         //public static GetCountryList() {
 

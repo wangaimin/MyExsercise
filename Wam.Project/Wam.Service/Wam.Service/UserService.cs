@@ -28,5 +28,9 @@ namespace Wam.Service
             }
         }
 
+        public string getName(string name) {
+            return name;
+        }
+
     }
 }

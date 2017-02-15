@@ -190,6 +190,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Configuration\Data\Shop.config" />
+    <Content Include="jsonrpc.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -252,6 +253,10 @@
     <ProjectReference Include="..\00_FrameWork\YZ.JsonRpc\YZ.JsonRpc.csproj">
       <Project>{9410d974-0539-44fd-b6a4-b0542bdb3e73}</Project>
       <Name>YZ.JsonRpc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wam.Service\Wam.Service\Wam.Service.csproj">
+      <Project>{792678dd-123a-4b05-ba33-5325225b6ff8}</Project>
+      <Name>Wam.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wam.Utility.DataAccess\Wam.Utility.DataAccess.csproj">
       <Project>{5f6d101c-c620-4dab-a15a-b8d6630b73f0}</Project>

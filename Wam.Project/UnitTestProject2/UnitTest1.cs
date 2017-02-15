@@ -8,6 +8,7 @@ using Wam.Utility.DataAccess.Entity;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Wam.Utility.Cache;
+using YZ.JsonRpc.Client;
 
 namespace UnitTestProject2
 {
@@ -57,6 +58,15 @@ namespace UnitTestProject2
             var data = lmc.GetWithCache("SqlConfig", _LoadConfig, 3600);
             var data2 = lmc.GetWithCache("SqlConfig", _LoadConfig, 3600);
         }
+
+        [TestMethod]
+        public void TestRpc() {
+          string result=  Rpc.Call<string>("WamService.UserService.getName", "Gene");
+
+        }
+
+
+
 
 
         public string getFullName(string namePart1, string namePart2)

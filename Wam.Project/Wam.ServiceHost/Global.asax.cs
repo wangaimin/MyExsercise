@@ -10,6 +10,7 @@ using System.Web.Routing;
 using Wam.Utility.Cache;
 using Wam.Utility.DataAccess.Entity;
 using Wam.Utility.String;
+using YZ.JsonRpc;
 
 namespace Wam.ServiceHost
 {
@@ -22,6 +23,8 @@ namespace Wam.ServiceHost
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+
+            JsonRpcRegister.LoadFromConfig();
         }
 
 
